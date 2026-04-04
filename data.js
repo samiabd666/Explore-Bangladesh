@@ -5,7 +5,7 @@ const data = {
     { name: "Ahsan Manzil", location: "Dhaka", description: "Pink palace museum" }
 ],
 
-"Chattogram": [
+"Chittagong": [
     { name: "Cox's Bazar", location: "Sea Beach", description: "World longest sea beach" },
     { name: "Bandarban", location: "Hill District", description: "Hills and waterfalls" }
 ],
