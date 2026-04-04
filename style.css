@@ -35,14 +35,14 @@ button {
     padding: 10px;
     border: none;
     border-radius: 8px;
-    background: #008cba;
+    background: #000000;
     color: white;
     cursor: pointer;
     transition: 0.3s;
 }
 
 button:hover {
-    background: #005f73;
+    background: #000000;
 }
 
 /* Details box */
