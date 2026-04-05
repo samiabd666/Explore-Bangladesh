@@ -1,34 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Explore Bangladesh</title>
-  <link rel="stylesheet" href="style.css">
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
 
-<h1>Explore Bangladesh</h1>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">Explore Bangladesh</div>
+    <ul class="nav-links">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
 
-<div class="container">
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>Discover Bangladesh</h1>
+    <p>Explore all the beautiful tourist places across districts</p>
 
-  <!-- Dhaka Button -->
-  <button class="district-btn" onclick="toggleDistrict('dhaka')">Dhaka</button>
+    <!-- Search -->
+    <input type="text" id="searchInput" placeholder="Search district or place...">
+  </section>
 
-  <div id="dhaka" class="spots-box">
-    <div class="spot-card">Lalbagh Fort</div>
-    <div class="spot-card">Ahsan Manzil</div>
-  </div>
+  <!-- District Section -->
+  <section class="container">
+    <div id="districtContainer" class="district-grid"></div>
+  </section>
 
-  <!-- Chattogram Button -->
-  <button class="district-btn" onclick="toggleDistrict('chattogram')">Chattogram</button>
+  <!-- Tourist Spots Section -->
+  <section class="container">
+    <div id="spotContainer" class="spot-grid"></div>
+  </section>
 
-  <div id="chattogram" class="spots-box">
-    <div class="spot-card">Cox's Bazar</div>
-    <div class="spot-card">Patenga Sea Beach</div>
-  </div>
-
-</div>
-
-<script src="script.js"></script>
+  <script src="data.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>
