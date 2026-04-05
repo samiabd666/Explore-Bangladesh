@@ -1,48 +1,33 @@
-const districtList = document.getElementById("districtList");
-const spotList = document.getElementById("spotList");
-const details = document.getElementById("details");
-const search = document.getElementById("search");
+const container = document.getElementById("container");
 
-function loadDistricts(filter = "") {
-    districtList.innerHTML = "";
-    spotList.innerHTML = "";
-    details.innerHTML = "";
+for (let district in data) {
 
-    Object.keys(data).forEach(district => {
-        if (district.toLowerCase().includes(filter.toLowerCase())) {
-            let btn = document.createElement("button");
-            btn.innerText = district;
-            btn.onclick = () => showSpots(district);
-            districtList.appendChild(btn);
-        }
-    });
+  // Button
+  const btn = document.createElement("button");
+  btn.className = "district-btn";
+  btn.innerText = district;
+
+  // Spots box
+  const box = document.createElement("div");
+  box.className = "spots-box";
+
+  // Add spots
+  data[district].forEach(spot => {
+    const spotDiv = document.createElement("div");
+    spotDiv.className = "spot-card";
+    spotDiv.innerText = spot;
+    box.appendChild(spotDiv);
+  });
+
+  // Toggle logic
+  btn.onclick = () => {
+    if (box.style.display === "block") {
+      box.style.display = "none";
+    } else {
+      box.style.display = "block";
+    }
+  };
+
+  container.appendChild(btn);
+  container.appendChild(box);
 }
-
-search.addEventListener("input", () => {
-    loadDistricts(search.value);
-});
-
-function showSpots(district) {
-    spotList.innerHTML = "";
-    details.innerHTML = "";
-
-    data[district].forEach(spot => {
-        let btn = document.createElement("button");
-        btn.innerText = spot.name;
-        btn.onclick = () => showDetails(spot);
-        spotList.appendChild(btn);
-    });
-}
-
-function showDetails(spot) {
-    details.innerHTML = `
-        <h2>${spot.name}</h2>
-        <p><b>Location:</b> ${spot.location}</p>
-        <p>${spot.description}</p>
-        <a href="https://www.google.com/search?q=${spot.name}" target="_blank">
-            🔎 View Hotels & Details
-        </a>
-    `;
-}
-
-loadDistricts();

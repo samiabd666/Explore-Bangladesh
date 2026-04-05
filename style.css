@@ -1,69 +1,67 @@
 body {
-    font-family: Arial;
-    margin: 0;
-    background: #b0b2b5;
-    text-align: center;
+  font-family: Arial;
+  text-align: center;
+  background: #f4f4f4;
 }
 
-/* Header */
-header {
-    background: linear-gradient(to right, green, darkgreen);
-    color: white;
-    padding: 20px;
+.container {
+  width: 300px;
+  margin: auto;
 }
 
-/* Search box */
-input {
-    margin: 20px;
-    padding: 12px;
-    width: 80%;
-    max-width: 300px;
-    border-radius: 8px;
-    border: 1px solid #ffffff;
+/* 3D Button */
+.district-btn {
+  width: 100%;
+  padding: 15px;
+  margin: 10px 0;
+  border: none;
+  background: linear-gradient(145deg, #4CAF50, #2e7d32);
+  color: white;
+  font-size: 18px;
+  border-radius: 10px;
+  box-shadow: 4px 4px 10px rgba(0,0,0,0.3);
+  cursor: pointer;
+  transition: all 0.2s ease;
 }
 
-/* Grid layout */
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-    gap: 10px;
-    padding: 10px;
+/* Hover effect */
+.district-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 6px 6px 15px rgba(0,0,0,0.4);
 }
 
-/* Buttons */
-button {
-    padding: 10px;
-    border: none;
-    border-radius: 8px;
-    background: #5b97ff;
-    color: white;
-    cursor: pointer;
-    transition: 0.3s;
+/* Click effect */
+.district-btn:active {
+  transform: scale(0.95);
 }
 
-button:hover {
-    background: #164d8d;
+/* Spots box */
+.spots-box {
+  display: none;
+  background: white;
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  animation: fadeIn 0.3s ease;
 }
 
-/* Details box */
-#details {
-    background: white;
-    padding: 15px;
-    width: 90%;
-    max-width: 400px;
-    margin: 20px auto;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+/* Spot cards */
+.spot-card {
+  background: #eee;
+  margin: 5px;
+  padding: 10px;
+  border-radius: 6px;
+  transition: 0.3s;
 }
 
-/* Mobile */
-@media (max-width: 600px) {
-    header h1 {
-        font-size: 20px;
-    }
+.spot-card:hover {
+  background: #ddd;
+  transform: scale(1.05);
+}
 
-    button {
-        font-size: 14px;
-        padding: 8px;
-    }
+/* Animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px);}
+  to { opacity: 1; transform: translateY(0);}
 }

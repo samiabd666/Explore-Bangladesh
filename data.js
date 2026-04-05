@@ -1,27 +1,81 @@
 const data = {
+  Dhaka: [
+    {
+      name: "Lalbagh Fort",
+      location: "Lalbagh, Dhaka",
+      description: "A famous Mughal fort in Dhaka."
+    },
+    {
+      name: "Ahsan Manzil",
+      location: "Old Dhaka",
+      description: "Also known as Pink Palace."
+    },
+    {
+      name: "National Parliament House",
+      location: "Sher-e-Bangla Nagar, Dhaka",
+      description: "Architectural masterpiece designed by Louis Kahn."
+    }
+  ],
 
-"Dhaka": [
-    { name: "Lalbagh Fort", location: "Old Dhaka", description: "Historic Mughal fort" },
-    { name: "Ahsan Manzil", location: "Dhaka", description: "Pink palace museum" }
-],
+  Chittagong: [
+    {
+      name: "Cox's Bazar",
+      location: "Cox's Bazar, Chittagong",
+      description: "The longest sea beach in the world."
+    },
+    {
+      name: "Patenga Sea Beach",
+      location: "Patenga, Chittagong",
+      description: "Popular beach near Chittagong city."
+    },
+    {
+      name: "Foy's Lake",
+      location: "Pahartali, Chittagong",
+      description: "A scenic artificial lake with amusement park."
+    }
+  ],
 
-"Chittagong": [
-    { name: "Cox's Bazar", location: "Sea Beach", description: "World longest sea beach" },
-    { name: "Bandarban", location: "Hill District", description: "Hills and waterfalls" }
-],
+  Rajshahi: [
+    {
+      name: "Varendra Research Museum",
+      location: "Rajshahi",
+      description: "One of the oldest museums in Bangladesh."
+    },
+    {
+      name: "Puthia Temple Complex",
+      location: "Puthia, Rajshahi",
+      description: "Famous for historical temples."
+    }
+  ],
 
-"Sylhet": [
-    { name: "Jaflong", location: "Sylhet", description: "Stone collection and river view" },
-    { name: "Ratargul Swamp Forest", location: "Sylhet", description: "Freshwater swamp forest" }
-],
+  Sylhet: [
+    {
+      name: "Ratargul Swamp Forest",
+      location: "Sylhet",
+      description: "Freshwater swamp forest and a natural wonder."
+    },
+    {
+      name: "Jaflong",
+      location: "Gowainghat, Sylhet",
+      description: "Popular tourist spot with hills and river views."
+    },
+    {
+      name: "Sajek Valley",
+      location: "Rangamati (near Sylhet region travel routes)",
+      description: "Famous hill destination with cloud views."
+    }
+  ],
 
-"Rajshahi": [
-    { name: "T-Badh", location: "Rajshahi", description: "Padma river view spot" },
-    { name: "Puthia Temple", location: "Rajshahi", description: "Historic temple complex" }
-],
-
-"Khulna": [
-    { name: "Sundarbans", location: "Khulna", description: "Mangrove forest and Royal Bengal Tiger" }
-]
-
+  Khulna: [
+    {
+      name: "Sundarbans",
+      location: "Khulna Division",
+      description: "Largest mangrove forest and home of Royal Bengal Tiger."
+    },
+    {
+      name: "Shat Gombuj Mosque",
+      location: "Bagerhat",
+      description: "Historic mosque listed as UNESCO World Heritage Site."
+    }
+  ]
 };
