@@ -19,7 +19,7 @@ input {
     width: 80%;
     max-width: 300px;
     border-radius: 8px;
-    border: 1px solid #ccc;
+    border: 1px solid #ffffff;
 }
 
 /* Grid layout */
@@ -35,14 +35,14 @@ button {
     padding: 10px;
     border: none;
     border-radius: 8px;
-    background: #698ed6;
+    background: #5b97ff;
     color: white;
     cursor: pointer;
     transition: 0.3s;
 }
 
 button:hover {
-    background: #6195d0;
+    background: #164d8d;
 }
 
 /* Details box */
