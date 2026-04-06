@@ -5,38 +5,38 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Explore Bangladesh</title>
 
-  <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-
   <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
 
   <!-- Navbar -->
   <nav class="navbar">
-    <div class="logo">Explore Bangladesh</div>
-    <ul class="nav-links">
-      <li><a href="#">Home</a></li>
-      <li><a href="#">About</a></li>
-      <li><a href="#">Contact</a></li>
-    </ul>
+    <div class="logo">Bangladesh</div>
+
+    <div class="menu">
+      <span id="menuBtn">⋮</span>
+      <div id="dropdown" class="dropdown">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+      </div>
+    </div>
   </nav>
 
-  <!-- Hero Section -->
+  <!-- Hero -->
   <section class="hero">
-    <h1>Discover Bangladesh</h1>
-    <p>Explore all the beautiful tourist places across districts</p>
-
-    <!-- Search -->
+    <h1>Explore Bangladesh</h1>
+    <p>Find tourist places across all districts</p>
     <input type="text" id="searchInput" placeholder="Search district or place...">
   </section>
 
-  <!-- District Section -->
+  <!-- District -->
   <section class="container">
     <div id="districtContainer" class="district-grid"></div>
   </section>
 
-  <!-- Tourist Spots Section -->
+  <!-- Spots -->
   <section class="container">
     <div id="spotContainer" class="spot-grid"></div>
   </section>

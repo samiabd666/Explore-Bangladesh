@@ -2,74 +2,71 @@ const districtContainer = document.getElementById("districtContainer");
 const spotContainer = document.getElementById("spotContainer");
 const searchInput = document.getElementById("searchInput");
 
-// Track active district
-let activeDistrict = null;
+/* MENU TOGGLE */
+const menuBtn = document.getElementById("menuBtn");
+const dropdown = document.getElementById("dropdown");
 
-/* -------------------------
-   Create District Buttons
---------------------------*/
+menuBtn.addEventListener("click", () => {
+  dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
+});
+
+/* LOAD DISTRICTS */
 function loadDistricts(filter = "") {
   districtContainer.innerHTML = "";
 
-  Object.keys(data)
-    .filter(district => district.toLowerCase().includes(filter.toLowerCase()))
-    .forEach(district => {
-
+  Object.keys(data).forEach(district => {
+    if (district.toLowerCase().includes(filter.toLowerCase())) {
       const btn = document.createElement("button");
       btn.className = "district-btn";
       btn.innerText = district;
 
-      btn.addEventListener("click", () => {
-        if (activeDistrict === district) {
-          // toggle off
-          spotContainer.innerHTML = "";
-          activeDistrict = null;
-        } else {
-          activeDistrict = district;
-          showSpots(district);
-        }
-      });
+      btn.onclick = () => toggleDistrict(district);
 
       districtContainer.appendChild(btn);
-    });
+    }
+  });
 }
 
-/* -------------------------
-   Show Tourist Spots
---------------------------*/
+/* TOGGLE DISTRICT */
+let activeDistrict = null;
+
+function toggleDistrict(district) {
+  if (activeDistrict === district) {
+    spotContainer.innerHTML = "";
+    activeDistrict = null;
+  } else {
+    activeDistrict = district;
+    showSpots(district);
+  }
+}
+
+/* SHOW SPOTS */
 function showSpots(district) {
   spotContainer.innerHTML = "";
 
   const spots = data[district];
 
-  if (!spots || spots.length === 0) {
-    spotContainer.innerHTML = "<p>No spots found</p>";
-    return;
-  }
-
   spots.forEach(spot => {
     const card = document.createElement("div");
     card.className = "card";
+
+    const mapLink = `https://www.google.com/maps?q=${encodeURIComponent(spot.location)}`;
 
     card.innerHTML = `
       <h3>${spot.name}</h3>
       <p><strong>Location:</strong> ${spot.location}</p>
       <p>${spot.description}</p>
+      <a href="${mapLink}" target="_blank">View on Google Maps</a>
     `;
 
     spotContainer.appendChild(card);
   });
 }
 
-/* -------------------------
-   Search Functionality
---------------------------*/
+/* SEARCH */
 searchInput.addEventListener("input", (e) => {
-  const value = e.target.value;
-  loadDistricts(value);
+  loadDistricts(e.target.value);
 });
 
-/* -------------------------
-   Initial Load
---------------------------*/
+/* INIT */
 loadDistricts();

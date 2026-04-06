@@ -1,13 +1,7 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
-}
-
 body {
-  background: #f4f7fb;
+  background: #d9f0ff;
   color: #333;
+  font-family: 'Poppins', sans-serif;
 }
 
 /* Navbar */
@@ -16,7 +10,7 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 15px 30px;
-  background: linear-gradient(135deg, #1e3c72, #2a5298);
+  background: #000;
   color: white;
 }
 
@@ -25,124 +19,89 @@ body {
   font-weight: 700;
 }
 
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 20px;
+/* Menu */
+.menu {
+  position: relative;
+  cursor: pointer;
 }
 
-.nav-links a {
-  color: white;
+#menuBtn {
+  font-size: 24px;
+}
+
+.dropdown {
+  display: none;
+  position: absolute;
+  right: 0;
+  background: white;
+  color: black;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.dropdown a {
+  display: block;
+  padding: 10px;
   text-decoration: none;
-  font-weight: 500;
+  color: black;
+}
+
+.dropdown a:hover {
+  background: #eee;
 }
 
 /* Hero */
 .hero {
   text-align: center;
-  padding: 60px 20px;
+  padding: 50px 20px;
 }
 
 .hero h1 {
   font-size: 36px;
-  margin-bottom: 10px;
-}
-
-.hero p {
-  margin-bottom: 20px;
-  color: #555;
 }
 
 #searchInput {
   padding: 10px;
   width: 250px;
-  border-radius: 8px;
-  border: 1px solid #ccc;
+  margin-top: 15px;
 }
 
-/* Container */
-.container {
-  padding: 20px;
+/* District Buttons */
+.district-btn {
+  padding: 15px;
+  border-radius: 10px;
+  border: none;
+  background: linear-gradient(145deg, #4facfe, #00f2fe);
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
 }
 
-/* District Grid */
+/* Grid */
 .district-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   gap: 15px;
 }
 
-/* 3D Button */
-.district-btn {
-  padding: 15px;
-  border: none;
-  border-radius: 10px;
-  background: linear-gradient(145deg, #4facfe, #00f2fe);
-  color: white;
-  font-weight: bold;
-  cursor: pointer;
-  box-shadow: 0 5px 10px rgba(0,0,0,0.2);
-  transition: all 0.2s ease;
-}
-
-.district-btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 15px rgba(0,0,0,0.3);
-}
-
-.district-btn:active {
-  transform: scale(0.95);
-}
-
-/* Spot Cards */
 .spot-grid {
+  margin-top: 20px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-  margin-top: 30px;
+  gap: 15px;
 }
 
+/* Card */
 .card {
   background: white;
-  border-radius: 12px;
   padding: 15px;
+  border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  transition: transform 0.3s;
-  animation: fadeIn 0.5s ease;
 }
 
-.card:hover {
-  transform: translateY(-5px);
-}
-
-.card h3 {
-  margin-bottom: 10px;
-}
-
-.card p {
-  font-size: 14px;
-  color: #666;
-}
-
-/* Animation */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Responsive */
-@media (max-width: 600px) {
-  .hero h1 {
-    font-size: 24px;
-  }
-
-  #searchInput {
-    width: 100%;
-  }
+.card a {
+  display: inline-block;
+  margin-top: 10px;
+  color: blue;
+  text-decoration: underline;
 }
