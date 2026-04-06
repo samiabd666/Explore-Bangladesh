@@ -2,15 +2,30 @@ const districtContainer = document.getElementById("districtContainer");
 const spotContainer = document.getElementById("spotContainer");
 const searchInput = document.getElementById("searchInput");
 
-/* MENU TOGGLE */
+/* -------------------------
+   MENU TOGGLE (FIXED)
+--------------------------*/
 const menuBtn = document.getElementById("menuBtn");
 const dropdown = document.getElementById("dropdown");
 
-menuBtn.addEventListener("click", () => {
+menuBtn.addEventListener("click", (e) => {
+  e.stopPropagation();
   dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
 });
 
-/* LOAD DISTRICTS */
+/* click anywhere → close menu */
+document.addEventListener("click", () => {
+  dropdown.style.display = "none";
+});
+
+/* prevent dropdown click from closing */
+dropdown.addEventListener("click", (e) => {
+  e.stopPropagation();
+});
+
+/* -------------------------
+   LOAD DISTRICTS
+--------------------------*/
 function loadDistricts(filter = "") {
   districtContainer.innerHTML = "";
 
@@ -20,27 +35,24 @@ function loadDistricts(filter = "") {
       btn.className = "district-btn";
       btn.innerText = district;
 
-      btn.onclick = () => toggleDistrict(district);
+      // ✅ REDIRECT TO SEPARATE PAGE
+      btn.onclick = () => {
+        window.location.href = `${district.toLowerCase()}.html`;
+      };
 
       districtContainer.appendChild(btn);
     }
   });
 }
 
-/* TOGGLE DISTRICT */
+/* -------------------------
+   TOGGLE FUNCTION (not used now but kept safe)
+--------------------------*/
 let activeDistrict = null;
 
-function toggleDistrict(district) {
-  if (activeDistrict === district) {
-    spotContainer.innerHTML = "";
-    activeDistrict = null;
-  } else {
-    activeDistrict = district;
-    showSpots(district);
-  }
-}
-
-/* SHOW SPOTS */
+/* -------------------------
+   SHOW SPOTS (for optional use)
+--------------------------*/
 function showSpots(district) {
   spotContainer.innerHTML = "";
 
@@ -63,7 +75,9 @@ function showSpots(district) {
   });
 }
 
-/* SEARCH */
+/* -------------------------
+   SEARCH
+--------------------------*/
 searchInput.addEventListener("input", (e) => {
   loadDistricts(e.target.value);
 });
